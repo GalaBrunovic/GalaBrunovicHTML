@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>GalaBrunovicHTML</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; 
+            color: #eaeaea; 
+            background-color: #1e1e1e;
+            margin: 2rem;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 1rem;
+            text-align: center; 
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style: square; 
+            margin-left: 2rem;
+        }
+
+        ol {
+            list-style: decimal; 
+            margin-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: #ffd700; 
+        }
+
+        em {
+            color: #90ee90; 
+            font-style: italic;
+        }
+
+        span.highlight {
+            color: #87cefa; 
+            background-color: #333;
+            padding: 0.2rem 0.4rem;
+            border-radius: 5px;
+        }
+
+        .box-container {
+            display: flex; 
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .box {
+            background-color: #2a2a2a;
+            width: 45%;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .box p strong {
+            text-decoration: underline; 
+        }
+
+        form {
+            background-color: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        fieldset {
+            border: 2px solid #444;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        legend {
+            color: #ffd700;
+            padding: 0 0.5rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input, select, datalist, button {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            color: #eaeaea;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        button {
+            margin-top: 1rem;
+            background-color: #ffd700;
+            color: #1e1e1e;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        button:hover {
+            background-color: #ffea70;
+        }
+
+        table {
+            width: 80%;
+            margin: 2rem auto;
+            border-collapse: collapse;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead th {
+            background-color: #444;
+            padding: 1rem;
+        }
+
+        tbody td, tbody th {
+            padding: 0.8rem;
+            border: 1px solid #555;
+        }
+
+        .table-naglaseno td {
+            background-color: #1e1e1e;
+        }
+
+        #posebna-tablica tbody tr:nth-child(odd) {
+            background-color: #333;
+        }
+
+        #posebna-tablica tbody tr:nth-child(even) {
+            background-color: #262626;
+        }
+
+
+        input[type="email"] {
+            border: 1px solid #444;
+        }
+
+        input[placeholder*="ime"] {
+            background-color: #252525;
+        }
+
+        select[id="tema"] {
+            border-left: 3px solid #ffd700;
+        }
+
+        datalist option[value^="D"] {
+            color: #90ee90;
+        }
+
+        .box-container > .box:first-child p {
+            text-align: left;
+        }
+
+        form fieldset label {
+            margin-left: 0.2rem;
+        }
+
+        thead tr:nth-child(2) th {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        table#posebna-tablica.table-naglaseno td {
+            vertical-align: middle;
+        }
+
+        form button[type="submit"] {
+            float: right;
+            margin-top: 1.5rem;
+        }
+
+        fieldset input,
+        fieldset select {
+            margin-bottom: 1rem;
+        }
+
+        input,
+        select,
+        datalist {
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        ul,
+        ol {
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        h1 {
+            position: relative;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        legend {
+            position: relative;
+            left: 10px;
+        }
+
+        .box-container .box:nth-child(2) {
+            position: relative;
+            right: -5px;
+        }
+
+        ul,
+        ol {
+            clear: both;
+        }
+
+        p.inline-info {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        tbody td {
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Projekt 1: HTML, CSS</h1>
+    <p>Ovo su osnove za moj <strong>HTML/CSS</strong> projekt.</p>
+
+    <p>U nastavku su <span class="highlight">primjeri listi i oznaka</span> koje treba uključiti:</p>
+    <p><strong>"strong"</strong> se koristi za boldani prikaz teksta, <em>"em"</em> za italik prikaz.</p>
+
+    <h2>Neuređena lista (ul, unordered list)</h2>
+    <ul>
+        <li>koristi se za nabrajanje bez redoslijeda</li>
+        <li>znači, ne sadrži elemente nabrajanja ispred elemenata (poput slova, brojeva...)</li>
+        <li>ovdje su elementi ispred teksta kvadratići</li>
+    </ul>
+
+    <h2>Uređena lista (ol, ordered list)</h2>
+    <ol>
+        <li>Koristi se za nabrajanje gdje je bitan redoslijed.</li>
+        <li>Sadrži elemente nabrajanja.</li>
+        <li>Ovdje su to redni brojevi.</li>
+    </ol>
+
+    <h2>Oznake <code>sub</code> i <code>sup</code></h2>
+    <p>- voda se piše kao H<sub>2</sub>O, a Einsteinova formula je E = mc<sup>2</sup>.</p>
+    <p>- koriste se za pisanje gornjeg i donjeg indeksa. To je najpotrebnije za pisanje formula.</p>
+
+    <div class="box-container">
+        <div class="box">
+            <p>Ovo je lijevi blok s tekstom.</p>
+        </div>
+        <div class="box">
+            <p>Ovo je desni blok s tekstom.</p>
+        </div>
+    </div>
+
+    <h2>HTML Forma (form, fieldset, legend, label, input...)</h2>
+    <form id="kontakt-forma" name="kontakt-forma">
+        <fieldset>
+            <legend>Kontakt podaci</legend>
+
+            <label for="ime">Ime i prezime:</label>
+            <input type="text" id="ime" name="ime" placeholder="Unesite svoje ime i prezime">
+
+            <label for="email">E-mail adresa:</label>
+            <input type="email" id="email" name="email" placeholder="primjer@mail.com">
+
+            <label for="tema">Odaberite temu poruke:</label>
+            <select id="tema" name="tema">
+                <option value="pitanje">Pitanje</option>
+                <option value="prijedlog">Prijedlog</option>
+                <option value="ostalo">Ostalo</option>
+            </select>
+
+            <label for="tisak">Omiljena vrsta tiska:</label>
+            <input list="vrste_tiska" id="tisak" name="tisak" placeholder="Odaberite ili upišite vrstu tiska">
+            <datalist id="vrste_tiska">
+                <option value="Ofset tisak">
+                <option value="Digitalni tisak">
+                <option value="Duboki tisak">
+                <option value="Visoki tisak">
+                <option value="Sitotisak">
+                <option value="Fleksotisak">
+            </datalist>
+
+            <button type="submit" value="Pošalji">Pošalji</button>
+        </fieldset>
+    </form>
+
+    <h2>Tablica: Vrste tiska i karakteristike</h2>
+
+    <table id="posebna-tablica" class="table-naglaseno">
+        <thead>
+            <tr>
+                <th>Vrsta tiska</th>
+                <th colspan="2">Specifikacije (colspan primjer)</th>
+            </tr>
+            <tr>
+                <th>Tehnika</th>
+                <th>Materijal</th>
+                <th>Kvaliteta</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th rowspan="2">Ofset tisak</th>
+                <td>Papir</td>
+                <td>Visoka</td>
+            </tr>
+            <tr>
+                <td>Karton</td>
+                <td>Vrlo visoka</td>
+            </tr>
+
+            <tr>
+                <th>Digitalni tisak</th>
+                <td>Papir</td>
+                <td>Srednja</td>
+            </tr>
+
+            <tr>
+                <th>Sitotisak</th>
+                <td>Tekstil</td>
+                <td>Visoka</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
