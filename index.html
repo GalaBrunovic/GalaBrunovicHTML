@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<title>GalaBrunovicHTML</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #eaeaea;
+    background-color: #1e1e1e;
+    margin: 2rem;
+}
+
+/* ===================== ANIMATION + @keyframes (DODANO) ===================== */
+
+@keyframes fadeInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 1rem;
+    text-align: center;
+    animation: fadeInTop 1.2s ease-out forwards;
+}
+
+/* ========================================================================== */
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: square;
+    margin-left: 2rem;
+}
+
+ol {
+    list-style: decimal;
+    margin-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+strong {
+    color: #ffd700;
+}
+
+em {
+    color: #90ee90;
+    font-style: italic;
+}
+
+span.highlight {
+    color: #87cefa;
+    background-color: #333;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+span.highlight:hover {
+    background-color: #ffd700;
+    color: #1e1e1e;
+}
+
+/* ===================== SLOŽENI SELEKTORI (DODANO) ===================== */
+
+/* + susjedni selektor */
+h2 + p {
+    color: #87cefa;
+}
+
+/* ~ svi sljedeći elementi */
+h3 ~ iframe {
+    border: 3px solid #ffd700;
+}
+
+/* :nth-child */
+ul li:nth-child(2) {
+    color: #ffb6c1;
+}
+
+/* :nth-of-type */
+figure:nth-of-type(1) figcaption {
+    color: #ffd700;
+}
+
+/* kombinacija ID + klasa */
+#tema.okvir.izdvojeno {
+    background-color: #333;
+    border: 2px solid #ffd700;
+}
+
+/* ===================================================================== */
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+/* > direktni potomak */
+.box-container > .box {
+    background-color: #2a2a2a;
+    width: 45%;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInTop 1s ease forwards;
+}
+
+.box:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+form {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset {
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+legend {
+    color: #ffd700;
+    padding: 0 0.5rem;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+input, select, datalist, button {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #eaeaea;
+    font-family: 'Roboto', sans-serif;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 2px solid #ffd700;
+    background-color: #262626;
+}
+
+button {
+    margin-top: 1rem;
+    background-color: #ffd700;
+    color: #1e1e1e;
+    cursor: pointer;
+}
+
+table {
+    width: 80%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background-color: #2a2a2a;
+}
+
+thead th {
+    background-color: #444;
+    padding: 1rem;
+}
+
+tbody td, tbody th {
+    padding: 0.8rem;
+    border: 1px solid #555;
+}
+
+tbody tr:hover {
+    background-color: #3a3a3a;
+}
+
+.table-naglaseno td {
+    background-color: #1e1e1e;
+}
+
+#posebna-tablica tbody tr:nth-child(odd) {
+    background-color: #333;
+}
+
+#posebna-tablica tbody tr:nth-child(even) {
+    background-color: #262626;
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .box-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .box {
+        width: 100%;
+    }
+    form {
+        width: 90%;
+    }
+    table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        margin: 1rem;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    p, li {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Projekt 1: HTML, CSS</h1>
+
+<p>Ovo su osnove za moj <strong>HTML/CSS</strong> projekt.</p>
+
+<p>U nastavku su <span class="highlight">primjeri listi i oznaka</span> koje treba uključiti:</p>
+
+<p><strong>"strong"</strong> se koristi za boldani prikaz teksta, <em>"em"</em> za italik prikaz.</p>
+
+<h2>Vanjske poveznice i fotografije</h2>
+<p>Ovo je link na vanjsku stranicu:</p>
+
+<a href="https://net.hr/danas/vijesti/povijest-nebodera-vjesnik-visok-67-metara-ime-dobio-po-novinskoj-tvrtki-d078387c-c41f-11f0-8a26-9600040c8f8e" target="_blank">Povijest Vjesnika</a>
+
+<h3>Moje fotografije</h3>
+
+<div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+    <figure style="text-align: center;">
+        <img src="Zgrada1.jpg" alt="Brutalistička zgrada blizu Vjesnika" style="width: 400px; border-radius: 10px;">
+        <figcaption>Brutalistička zgrada – moja fotografija</figcaption>
+    </figure>
+
+    <figure style="text-align: center;">
+        <img src="Vjesnik2.jpg" alt="Vjesnikov neboder" style="width: 400px; border-radius: 10px;">
+        <figcaption>Vjesnikov neboder – moja fotografija</figcaption>
+    </figure>
+</div>
+
+<h3>Ugrađeni YouTube video</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rIqZtPRBvn8" allowfullscreen></iframe>
+
+<h3>Object primjer (PDF prikaz)</h3>
+<object data="pdfzaindex.pdf" type="application/pdf" width="600" height="400"></object>
+
+<h2>Neuređena lista (ul)</h2>
+<ul>
+    <li>koristi se za nabrajanje bez redoslijeda</li>
+    <li>znači, ne sadrži elemente nabrajanja ispred elemenata</li>
+    <li>ovdje su elementi kvadratići</li>
+</ul>
+
+<h2>Uređena lista (ol)</h2>
+<ol>
+    <li>Koristi se za nabrajanje gdje je bitan redoslijed.</li>
+    <li>Sadrži elemente nabrajanja.</li>
+    <li>Ovdje su to redni brojevi.</li>
+</ol>
+
+<h2>Oznake sub i sup</h2>
+<p>- voda se piše kao H<sub>2</sub>O, a Einsteinova formula je E = mc<sup>2</sup>.</p>
+
+<div class="box-container">
+    <div class="box"><p>Ovo je lijevi blok s tekstom.</p></div>
+    <div class="box"><p>Ovo je desni blok s tekstom.</p></div>
+</div>
+
+<h2>HTML Forma</h2>
+<form id="kontakt-forma" name="kontakt-forma">
+    <fieldset>
+        <legend>Kontakt podaci</legend>
+
+        <label for="ime">Ime i prezime:</label>
+        <input type="text" id="ime" name="ime">
+
+        <label for="email">E-mail adresa:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="tema">Odaberite temu poruke:</label>
+        <select id="tema" name="tema" class="okvir izdvojeno">
+            <option>Pitanje</option>
+            <option>Prijedlog</option>
+            <option>Ostalo</option>
+        </select>
+
+        <label for="tisak">Omiljena vrsta tiska:</label>
+        <input list="vrste_tiska" id="tisak" name="tisak">
+
+        <datalist id="vrste_tiska">
+            <option value="Ofset tisak">
+            <option value="Digitalni tisak">
+            <option value="Duboki tisak">
+            <option value="Visoki tisak">
+            <option value="Sitotisak">
+            <option value="Fleksotisak">
+        </datalist>
+
+        <button type="submit">Pošalji</button>
+    </fieldset>
+</form>
+
+<h2>Tablica: Vrste tiska i karakteristike</h2>
+<table id="posebna-tablica" class="table-naglaseno">
+    <thead>
+        <tr>
+            <th>Vrsta tiska</th>
+            <th colspan="2">Specifikacije</th>
+        </tr>
+        <tr>
+            <th>Tehnika</th>
+            <th>Materijal</th>
+            <th>Kvaliteta</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><th rowspan="2">Ofset tisak</th><td>Papir</td><td>Visoka</td></tr>
+        <tr><td>Karton</td><td>Vrlo visoka</td></tr>
+        <tr><th>Digitalni tisak</th><td>Papir</td><td>Srednja</td></tr>
+        <tr><th>Sitotisak</th><td>Tekstil</td><td>Visoka</td></tr>
+    </tbody>
+</table>
+
+<h2>Picture element sa Source</h2>
+<picture>
+    <source srcset="slika_large.jpg" media="(min-width: 800px)">
+    <source srcset="slika_medium.jpg" media="(min-width: 500px)">
+    <img src="slika_small.jpg" style="width:300px;">
+</picture>
+
+<h2>Video primjer</h2>
+<video id="video1" width="500" controls>
+    <source src="video.mp4" type="video/mp4">
+</video>
+<button onclick="document.getElementById('video1').play()">Pokreni video</button>
+
+<h2>Audio primjer</h2>
+<audio controls>
+    <source src="audio.mp3" type="audio/mp3">
+</audio>
+
+<h2>Embed primjer</h2>
+<embed src="mojpdf.pdf" type="application/pdf" width="600" height="400">
+
+<h2>Interaktivna mapa slike</h2>
+<img src="mapa.jpg" usemap="#lokacije" width="400">
+<map name="lokacije">
+    <area shape="rect" coords="10,10,150,150" href="https://www.google.com">
+    <area shape="circle" coords="250,200,60" href="https://www.youtube.com">
+</map>
+
+</body>
+</html>
+
